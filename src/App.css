@@ -1,100 +1,264 @@
-body{
-  background-color:#a1c0a2 ;
+/* App.css */
+
+/* General styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #403434;
 }
-.my-form {
-  max-width: 400px;
-  margin: 0 auto;
-  background-color: #fff;
-  padding: 30px;
+
+/* Admin Panel Styles */
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.navbar {
+  width: calc(100% - 40px);
+  background-color: #e71009d6;
+  color: #ffffff;
+  padding: 10px 20px;
+  margin: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  border: 2px solid #3498db;
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-input[type="text"],input[type="date"],
-select {
-  width: 95%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
-}
-.checkbox-container {
   display: flex;
   align-items: center;
-}
-input[type="checkbox"] {
-  margin-right: 10px;
-}
-
-button[type="submit"] {
-  background-color: #4CAF50;
-  color: #fff;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-button[type="submit"]:hover {
-  background-color: #45a049;
+.navbar-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 20px;
 }
-.success-message {
-  background-color: white;
+
+.navbar-nav {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-nav li {
+  margin: 0 15px;
+}
+
+.navbar-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.navbar-nav a:hover {
+  color: #007bff;
+  transform: translateY(-2px);
+}
+
+/* Main Content Styles */
+.main-content {
+  flex-grow: 1;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.back-button {
-  background-color: #61dafb;
-  border: none;
+/* User Table Styles */
+.tong-hop-xuat-an {
+  margin-top: 20px;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.user-table th, .user-table td {
+  border: 1px solid #dee2e6;
+  padding: 12px;
+  text-align: left;
+}
+
+.user-table th {
+  background-color: #343a40;
+  color: white;
+  font-weight: 600;
+}
+
+.user-table tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.user-table tr:hover {
+  background-color: #e9ecef;
+}
+
+.user-table td {
+  vertical-align: middle;
+}
+
+.user-table tr td:first-child {
+  border-left: none;
+}
+
+.user-table tr td:last-child {
+  border-right: none;
+}
+
+@media (max-width: 768px) {
+  .navbar-header {
+    font-size: 20px;
+  }
+
+  .navbar-nav a {
+    font-size: 14px;
+    margin: 0 10px;
+  }
+
+  .main-content {
+    padding: 15px;
+    margin: 15px;
+  }
+
+  .user-table th, .user-table td {
+    padding: 10px;
+  }
+  
+}
+.delete-all-button,
+.delete-selected-button {
+  background-color: #f44336;
   color: white;
   padding: 10px 20px;
-  margin-top: 20px;
+  margin: 0 0 0 100px;
+  border: none;
   cursor: pointer;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+
+.delete-all-button:hover,
+.delete-selected-button:hover {
+  background-color: #d32f2f;
+}
+
+.delete-all-button:active,
+.delete-selected-button:active {
+  background-color: #b71c1c;
+}
+/* Thêm tính năng responsive cho các nút xóa */
+/* Thêm tính năng responsive cho điện thoại */
+@media (max-width: 480px) {
+  .navbar-header {
+    font-size: 18px; /* Giảm kích thước font chữ cho tiêu đề navbar */
+  }
+
+  .navbar-nav a {
+    font-size: 12px; /* Giảm kích thước font chữ cho các liên kết trong navbar */
+  }
+
+  .main-content {
+    padding: 10px; /* Giảm padding cho phần nội dung chính */
+    margin: 10px; /* Giảm margin cho phần nội dung chính */
+  }
+
+  .user-table th, .user-table td {
+    padding: 8px; /* Giảm padding cho các ô trong bảng người dùng */
+  }
+  
+  .delete-all-button,
+  .delete-selected-button {
+    padding: 8px 16px; /* Điều chỉnh kích thước của các nút */
+    font-size: 20px; /* Điều chỉnh kích thước font chữ */
+    margin: 10px auto; /* Đặt margin tự động giữa các nút */
+  }
+  
+}
+
+.export-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin:0 0 0 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.export-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+.filter-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  align-items: center;
+}
+
+.filter-container label {
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.filter-container input[type="date"] {
+  padding: 5px;
+  border: 1px solid #ddd;
   border-radius: 4px;
 }
-@media only screen and (max-width: 768px) {
-  .my-form {
-    max-width: 400px;
-  }
+.meal-total-container {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin-bottom: 20px; /* Thêm khoảng cách ở dưới */
 }
 
-@media only screen and (max-width: 480px) {
-  .my-form {
-    padding: 10px;
-  }
+.meal-total-container h3 {
+  margin-bottom: 10px;
 }
 
-@media only screen and (max-width: 320px) {
-  .my-form {
-    max-width: 300px;
-  }
-
-  input[type="text"], input[type="date"], select {
-    width: 95%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-  }
+.meal-total-container label {
+  margin-bottom: 5px;
+  margin-right: 15px;
 }
+
+.meal-total-container input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.meal-total-container button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.meal-total-container button[type="submit"] {
+  margin-top: 10px;
+}
+
+
+
+
